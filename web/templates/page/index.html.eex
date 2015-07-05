@@ -3,6 +3,9 @@
 </div>
 
 <div id="messages" class="container">
+  <%= for message <- @messages do %>
+    <p><a href='#'><%= message[:user] %></a>&nbsp; <%= message[:body]%></p>
+  <% end %>
 </div>
 <div id="footer">
   <div class="container">
