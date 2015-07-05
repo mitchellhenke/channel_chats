@@ -14,10 +14,6 @@
   <body>
     <div class="container" role="main">
       <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
-        </ul>
-        <span class="logo"></span>
       </div>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
@@ -26,9 +22,10 @@
       <%= @inner %>
 
     </div> <!-- /container -->
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
-    
+
     <script>require("web/static/js/app")</script>
-    
+
   </body>
 </html>
