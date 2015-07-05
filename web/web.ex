@@ -27,10 +27,6 @@ defmodule ChannelChats.Web do
       use Phoenix.Controller
 
       # Alias the data repository and import query/model functions
-      alias ChannelChats.Repo
-      import Ecto.Model
-      import Ecto.Query, only: [from: 2]
-
       # Import URL helpers from the router
       import ChannelChats.Router.Helpers
     end
@@ -60,12 +56,6 @@ defmodule ChannelChats.Web do
   def channel do
     quote do
       use Phoenix.Channel
-
-      # Alias the data repository and import query/model functions
-      alias ChannelChats.Repo
-      import Ecto.Model
-      import Ecto.Query, only: [from: 2]
-
     end
   end
 

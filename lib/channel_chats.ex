@@ -10,7 +10,6 @@ defmodule ChannelChats do
       # Start the endpoint when the application starts
       supervisor(ChannelChats.Endpoint, []),
       # Start the Ecto repository
-      worker(ChannelChats.Repo, []),
       worker(ChatLog, [[name: :chat_log]]),
       # Here you could define other workers and supervisors as children
       # worker(ChannelChats.Worker, [arg1, arg2, arg3]),
