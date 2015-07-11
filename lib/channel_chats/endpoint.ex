@@ -27,10 +27,5 @@ defmodule ChannelChats.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
 
-  plug Plug.Session,
-    store: :cookie,
-    key: "_channel_chats_key",
-    signing_salt: "vhubcjEq"
-
   plug :router, ChannelChats.Router
 end
