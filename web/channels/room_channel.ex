@@ -1,6 +1,5 @@
 defmodule ChannelChats.RoomChannel do
   use Phoenix.Channel
-  require Logger
 
   @doc """
   Authorize socket to subscribe and broadcast events on this channel & topic
@@ -18,7 +17,6 @@ defmodule ChannelChats.RoomChannel do
   end
 
   def handle_info({:after_join, msg}, socket) do
-    Logger.debug "> join #{socket.topic}"
     broadcast! socket, "user:entered", %{user: msg["user"]}
     push socket, "join", %{status: "connected"}
     {:noreply, socket}
@@ -28,8 +26,7 @@ defmodule ChannelChats.RoomChannel do
     {:noreply, socket}
   end
 
-  def terminate(reason, _socket) do
-    Logger.debug"> leave #{inspect reason}"
+  def terminate(_reason, _socket) do
     :ok
   end
 
