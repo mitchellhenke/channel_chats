@@ -1,8 +1,10 @@
 defmodule ChannelChats.PageController do
   use ChannelChats.Web, :controller
 
-  def index(conn, _params) do
-    messages = ChatLog.get_logs("rooms:lobby")
+  def index(conn, params) do
+    room_name = params["room"] || "lobby"
+    room = "rooms:#{room_name}"
+    messages = ChatLog.get_logs(room)
     |> parse_logs
     render conn, "index.html", messages: messages
   end
