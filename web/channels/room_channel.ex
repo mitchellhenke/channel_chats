@@ -9,15 +9,12 @@ defmodule ChannelChats.RoomChannel do
   `:ignore` to deny subscription/broadcast on this channel
   for the requested topic
   """
-  def join("rooms:lobby", message, socket) do
+
+  def join("rooms:" <> _room, message, socket) do
     Process.flag(:trap_exit, true)
     send(self, {:after_join, message})
 
     {:ok, socket}
-  end
-
-  def join("rooms:" <> _private_subtopic, _message, _socket) do
-    {:error, %{reason: "unauthorized"}}
   end
 
   def handle_info({:after_join, msg}, socket) do
