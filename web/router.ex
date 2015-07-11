@@ -8,7 +8,6 @@ defmodule ChannelChats.Router do
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
-    plug :fetch_flash
     plug :protect_from_forgery
   end
 
