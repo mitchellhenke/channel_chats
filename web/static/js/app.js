@@ -25,7 +25,7 @@ class App {
     socket.onClose( e => console.log("CLOSE", e))
 
     var room = location.search.split('room=')[1] || "lobby"
-    var chan = socket.chan("rooms:" + room, {})
+    var chan = socket.chan("rooms:" + room, {user: $username.val()})
     chan.join().receive("ignore", () => console.log("auth error"))
                .receive("ok", () => console.log("join ok"))
                .after(10000, () => console.log("Connection interruption"))
