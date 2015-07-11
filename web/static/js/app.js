@@ -3,6 +3,14 @@ import {Socket} from "phoenix"
 class App {
 
   static init(){
+    $('#join-room-button').click(function(){
+      var room = $('#room-input').val()
+      if(room.length > 0) {
+        window.location.href = '?room=' + room;
+      }
+    })
+
+
     var socket     = new Socket("/ws")
     socket.connect()
     var $status    = $("#status")
