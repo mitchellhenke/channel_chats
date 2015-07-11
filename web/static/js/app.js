@@ -18,6 +18,10 @@ class App {
     var $input     = $("#message-input")
     var $username  = $("#username")
 
+    if(localStorage.getItem("username")) {
+      $username.val(localStorage.getItem("username"))
+    }
+
     socket.onClose( e => console.log("CLOSE", e))
 
     var room = location.search.split('room=')[1] || "lobby"
@@ -31,6 +35,7 @@ class App {
     $input.off("keypress").on("keypress", e => {
       if (e.keyCode == 13) {
         chan.push("new:msg", {user: $username.val(), body: $input.val()})
+        localStorage.setItem("username", $username.val())
         $input.val("")
       }
     })
