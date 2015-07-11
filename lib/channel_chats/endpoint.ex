@@ -14,10 +14,10 @@ defmodule ChannelChats.Endpoint do
   if code_reloading? do
     plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
+    plug Plug.Logger
   end
 
   plug Plug.RequestId
-  plug Plug.Logger
 
   plug Plug.Parsers,
     parsers: [:urlencoded, :multipart, :json],
