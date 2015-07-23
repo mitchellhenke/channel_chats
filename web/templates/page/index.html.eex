@@ -1,5 +1,5 @@
 <div class="jumbotron">
-  <h2>Welcome to Chat</h2>
+  <h2>Welcome to Chats</h2>
   <div class="container">
     <div class="row">
       <input id="room-input" type="text"></input>
