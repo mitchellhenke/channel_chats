@@ -68,8 +68,6 @@ defmodule ChatLog do
   defp log_message(channel, message, ets_table_name) do
     case :ets.member(ets_table_name, channel) do
       false ->
-        # Insert Key {bucket_number, id} with counter (1), created_at (timestamp), updated_at (timestamp)
-        # The first element of the four element Tuple becomes the key.
         true = :ets.insert(ets_table_name, {channel, [message]})
         {:ok, message}
       true ->
