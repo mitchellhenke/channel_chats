@@ -1,10 +1,6 @@
 defmodule ChannelChats.Router do
   use ChannelChats.Web, :router
 
-  socket "/ws", ChannelChats do
-    channel "rooms:*", RoomChannel
-  end
-
   pipeline :browser do
     plug :accepts, ["html"]
   end
