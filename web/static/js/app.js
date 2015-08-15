@@ -1,4 +1,5 @@
-import {Socket} from "phoenix"
+import {Socket} from "deps/phoenix/web/static/js/phoenix"
+import "deps/phoenix_html/web/static/js/phoenix_html"
 
 class App {
 
@@ -25,7 +26,7 @@ class App {
     socket.onClose( e => console.log("CLOSE", e))
 
     var room = location.search.split('room=')[1] || "lobby"
-    var chan = socket.chan("rooms:" + room, {user: $username.val()})
+    var chan = socket.channel("rooms:" + room, {user: $username.val()})
     chan.join().receive("ignore", () => console.log("auth error"))
                .receive("ok", () => console.log("join ok"))
                .after(10000, () => console.log("Connection interruption"))
