@@ -5,4 +5,4 @@
     - vars/main.yml
 
   roles:
-    - {role: "HashNuke.elixir-stack", action: "migrate"}
+    - {role: "mitchellhenke.elixir-stack", action: "migrate"}
