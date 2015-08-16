@@ -3,4 +3,5 @@ app_name: channel_chats
 repo_url: "git@github.com:mitchellhenke/channel_chats.git"
 app_port: 3001
 setup_postgres: False
+use_ecto: False
 deploy_type: restart
