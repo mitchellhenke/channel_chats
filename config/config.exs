@@ -7,7 +7,7 @@ use Mix.Config
 
 # Configures the endpoint
 config :channel_chats, ChannelChats.Endpoint,
-  url: [host: "localhost"],
+  url: [host: "104.236.25.229"],
   root: Path.dirname(__DIR__),
   secret_key_base: "BYw+IxRXslbnkOu0trof9QpETpfdsP9CUOhMA2eVr37/WGd2VVgUad1FIG2KQK6K",
   render_errors: [default_format: "html"],
