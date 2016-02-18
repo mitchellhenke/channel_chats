@@ -1,5 +1,5 @@
-import {Socket} from "deps/phoenix/web/static/js/phoenix"
-import "deps/phoenix_html/web/static/js/phoenix_html"
+import "phoenix_html"
+import {Socket} from "phoenix"
 
 class App {
 
@@ -29,7 +29,7 @@ class App {
     var chan = socket.channel("rooms:" + room, {user: $username.val()})
     chan.join().receive("ignore", () => console.log("auth error"))
                .receive("ok", () => console.log("join ok"))
-               .after(10000, () => console.log("Connection interruption"))
+               .receive("timeout", () => console.log("Connection interruption"))
     chan.onError(e => console.log("something went wrong", e))
     chan.onClose(e => console.log("channel closed", e))
 
