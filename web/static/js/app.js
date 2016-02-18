@@ -46,9 +46,18 @@ class App {
       scrollTo(0, document.body.scrollHeight)
     })
 
-    chan.on("user:entered", msg => {
-      var username = this.sanitize(msg.user || "anonymous")
-      $messages.append(`<br/><i>[${username} entered]</i>`)
+    chan.on("presence_diff", msg => {
+      $.each(Object.keys(msg.joins), function(index, value) {
+        console.log(value)
+        var username = value || "anonymous"
+        $messages.append(`<br/><i>[${username} entered]</i>`)
+      })
+
+      $.each(Object.keys(msg.leaves), function(index, value) {
+        console.log(value)
+        var username = value || "anonymous"
+        $messages.append(`<br/><i>[${username} left]</i>`)
+      })
     })
   }
 

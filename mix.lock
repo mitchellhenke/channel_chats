@@ -10,6 +10,7 @@
   "phoenix": {:git, "https://github.com/phoenixframework/phoenix.git", "e42a660b9a1208a8f4a96cf5cd95b3c6532a61cf", []},
   "phoenix_html": {:hex, :phoenix_html, "2.5.0"},
   "phoenix_live_reload": {:hex, :phoenix_live_reload, "1.0.3"},
+  "phoenix_pubsub": {:git, "https://github.com/phoenixframework/phoenix_pubsub.git", "ad545349564a1cd72df80c6e627644c4b50b9c75", []},
   "plug": {:hex, :plug, "1.1.1"},
   "poison": {:hex, :poison, "2.1.0"},
   "providers": {:hex, :providers, "1.4.1"},
