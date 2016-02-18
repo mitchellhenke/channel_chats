@@ -16,7 +16,7 @@
       <div class="header">
       </div>
 
-      <%= @inner %>
+      <%= render @view_module, @view_template, assigns %>
 
     </div> <!-- /container -->
     <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
