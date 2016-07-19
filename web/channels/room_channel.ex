@@ -1,6 +1,6 @@
 defmodule ChannelChats.RoomChannel do
   use Phoenix.Channel
-  import ChannelChats.Presence, only: [track: 3, list: 1]
+  # import ChannelChats.Presence, only: [track: 3, list: 1]
 
   @doc """
   Authorize socket to subscribe and broadcast events on this channel & topic
@@ -19,9 +19,9 @@ defmodule ChannelChats.RoomChannel do
 
   def handle_info({:after_join, msg}, socket) do
     user = %{id: msg["user"]}
-    {:ok, _} = track(socket, user[:id], user)
+    # {:ok, _} = track(socket, user[:id], user)
 
-    push socket, "presences", %{presences: list(socket.topic)}
+    push socket, "presences", %{presences: []}#list(socket.topic)}
     {:noreply, socket}
   end
 

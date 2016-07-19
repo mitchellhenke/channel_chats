@@ -13,9 +13,9 @@ use Mix.Config
 # which you typically run after static files are built.
 config :channel_chats, ChannelChats.Endpoint,
   http: [port: {:system, "PORT"}],
-  url: [host: "example.com", port: 80],
-  cache_static_manifest: "priv/static/manifest.json",
-  server: true
+  url: [scheme: "https", host: "aqueous-falls-60524.herokuapp.com", port: 443],
+  force_ssl: [rewrite_on: [:x_forwarded_proto]],
+  cache_static_manifest: "priv/static/manifest.json"
 
 # ## SSL Support
 #
@@ -50,4 +50,4 @@ config :logger, level: :info
 
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
-import_config "prod.secret.exs"
+# import_config "prod.secret.exs"

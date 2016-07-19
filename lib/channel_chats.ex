@@ -11,7 +11,7 @@ defmodule ChannelChats do
       supervisor(ChannelChats.Endpoint, []),
       # Start the Ecto repository
       worker(ChatLog, [[name: :chat_log]]),
-      supervisor(ChannelChats.Presence, []),
+      # supervisor(ChannelChats.Presence, []),
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html

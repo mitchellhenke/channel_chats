@@ -8,7 +8,6 @@ use Mix.Config
 # Configures the endpoint
 config :channel_chats, ChannelChats.Endpoint,
   url: [host: "104.236.25.229"],
-  root: Path.dirname(__DIR__),
   secret_key_base: "BYw+IxRXslbnkOu0trof9QpETpfdsP9CUOhMA2eVr37/WGd2VVgUad1FIG2KQK6K",
   render_errors: [accepts: "html"],
   pubsub: [name: ChannelChats.PubSub,
@@ -19,8 +18,8 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
-config :channel_chats, ChannelChats.Presence,
-  pubsub_server: ChannelChats.PubSub
+# config :channel_chats, ChannelChats.Presence,
+#   pubsub_server: ChannelChats.PubSub
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

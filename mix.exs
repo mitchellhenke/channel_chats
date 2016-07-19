@@ -17,7 +17,7 @@ defmodule ChannelChats.Mixfile do
   # Type `mix help compile.app` for more information
   def application do
     [mod: {ChannelChats, []},
-     applications: [:phoenix, :phoenix_html, :cowboy, :logger,]]
+     applications: [:phoenix, :phoenix_html, :cowboy, :logger, :phoenix_pubsub]]
   end
 
   # Specifies which paths to compile per environment
@@ -28,11 +28,11 @@ defmodule ChannelChats.Mixfile do
   #
   # Type `mix help deps` for examples and options
   defp deps do
-    [{:phoenix, github: "phoenixframework/phoenix", override: true},
+    [{:phoenix, "~> 1.2"},
      {:phoenix_html, "~> 2.3"},
-     {:phoenix_live_reload, "~> 1.0", only: :dev},
+     {:phoenix_pubsub, "~> 1.0"},
      {:cowboy, "~> 1.0"},
-     {:exrm, "~> 0.18"}
+     {:phoenix_live_reload, "~> 1.0", only: :dev},
    ]
   end
 end
