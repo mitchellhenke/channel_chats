@@ -8,3 +8,5 @@ To start Phoenix application:
 Now you can visit `localhost:4000` from your browser.
 
 Simple example of using ETS to store the logs of the chat and display previous chats to users just joining.
+
+This repository is described in greater detail in this [post](http://blog.rokkincat.com/extending-phoenix-chat-app-with-ets-based-logs/)
